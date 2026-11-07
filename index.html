@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rithvik P R | Portfolio</title>
+  <meta name="description" content="Portfolio of Rithvik P R - Computer Science Engineering Student exploring AI and Technology.">
+  <link rel="icon" type="image/svg+xml" href="assets/arc-reactor.svg">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Background Particle Network -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="#hero" class="nav-brand">
+        <img src="assets/arc-reactor.svg" alt="Arc Reactor" class="brand-reactor">
+        <span>Rithvik P R</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#spotify" class="nav-link">Spotify</a></li>
+          <li><a href="#resume" class="nav-link">Resume</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions: Theme Switcher -->
+      <div class="nav-actions">
+        <!-- Dark / Light Mode Switcher -->
+        <button class="hud-btn-icon" id="theme-toggle-btn" title="Toggle Dark / Light Mode" aria-label="Toggle Theme Mode">
+          <span id="theme-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          
+          <!-- Left Column: Name & Headline -->
+          <div class="hero-content reveal-on-scroll">
+            <div class="hero-status-pill">
+              <span class="pulse-dot"></span>
+              <span>Available for Projects & Learning</span>
+            </div>
+
+            <h1 class="hero-title">
+              Hi, I'm <span class="name-highlight">Rithvik P R</span>
+            </h1>
+
+            <div class="hero-headline-wrapper">
+              <span class="headline-static">Computer Science Engineering Student | Exploring AI and Technology</span><span id="hero-typewriter-dynamic" class="typewriter-dynamic-text"></span><span class="typewriter-cursor"></span>
+            </div>
+
+            <p class="hero-description">
+              Passionate about building software, exploring cutting-edge AI technologies, and solving meaningful problems through creative engineering.
+            </p>
+
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn-classy-primary">
+                <span>View Projects</span>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn-classy-outline">
+                <span>Get in Touch</span>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13"></path>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: BIG VISIBLE PROFILE PICTURE -->
+          <div class="hero-avatar-showcase reveal-on-scroll">
+            <div class="avatar-hud-frame">
+              <!-- Subtle Arc Reactor Halo Rings Behind Photo -->
+              <div class="avatar-ring-outer"></div>
+              <div class="avatar-ring-middle"></div>
+
+              <!-- Profile Picture Container -->
+              <div class="avatar-image-container">
+                <img 
+                  src="assets/profile.jpg" 
+                  alt="Rithvik P R Profile Picture" 
+                  id="user-profile-img"
+                  class="avatar-img"
+                >
+              </div>
+            </div>
+
+            <!-- Profile Info Card Underneath -->
+            <div class="avatar-telemetry-badge">
+              <div class="telemetry-item">
+                <span class="telemetry-label">Status</span>
+                <span class="telemetry-val">2nd Year CSE</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">Location</span>
+                <span class="telemetry-val">Davangere, India</span>
+              </div>
+              <div class="telemetry-item">
+                <span class="telemetry-label">Focus</span>
+                <span class="telemetry-val" style="color: var(--stark-gold);">AI & Tech</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         ABOUT ME SECTION (HEADLINE IN MIDDLE, SIMPLE WORDS)
+         ========================================================================== -->
+    <section id="about" class="about-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">About Me</h2>
+          <p class="section-subtitle">A brief introduction about my background and journey</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Text Content -->
+          <div class="about-text-content reveal-on-scroll">
+            <p>
+              I’m a second-year Computer Science and Engineering student at Jain Institute of Technology, Davangere. I’m interested in technology and exploring how AI tools can support learning, creativity, and problem-solving. I’m currently developing projects and building my skills as I grow in the field.
+            </p>
+
+            <div class="about-quote">
+              "Building the future with technology, curiosity, and code." — Rithvik P R
+            </div>
+
+            <p style="font-size: 1.05rem; color: var(--text-secondary);">
+              I love discovering how modern AI can accelerate problem-solving and empower students and developers to create impactful software solutions.
+            </p>
+          </div>
+
+          <!-- Clean Info Card -->
+          <div class="about-info-card clean-card reveal-on-scroll">
+            <h3 class="about-info-card-title">Quick Overview</h3>
+
+            <div class="info-row">
+              <span class="info-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                Name
+              </span>
+              <span class="info-val">Rithvik P R</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                Degree
+              </span>
+              <span class="info-val">B.E. Computer Science</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                College
+              </span>
+              <span class="info-val">JIT Davangere</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+                Year
+              </span>
+              <span class="info-val">Second Year</span>
+            </div>
+
+            <div class="info-row">
+              <span class="info-label">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                Interest
+              </span>
+              <span class="info-val" style="color: var(--stark-gold);">AI & Technology</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SKILLS AND TOOLS SECTION (HEADLINE IN MIDDLE, SIMPLE WORDS)
+         ========================================================================== -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Skills and Tools</h2>
+          <p class="section-subtitle">Technologies, programming languages, and AI tools I work with</p>
+        </div>
+
+        <div class="skills-container">
+          
+          <!-- Category 1: Programming Languages -->
+          <div class="skills-category reveal-on-scroll">
+            <h3 class="skills-category-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              <span>Programming Languages</span>
+            </h3>
+
+            <div class="skills-grid">
+              
+              <!-- Skill: C Programming -->
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon-wrapper" title="C Programming">
+                    <svg viewBox="0 0 128 128" width="28" height="28">
+                      <path fill="#00599C" d="M116.2 97.4l-46.7 27c-3.4 2-7.6 2-11 0l-46.7-27c-3.4-2-5.5-5.6-5.5-9.5V36.1c0-3.9 2.1-7.5 5.5-9.5l46.7-27c3.4-2 7.6-2 11 0l46.7 27c3.4 2 5.5 5.6 5.5 9.5v51.8c0 3.9-2.1 7.5-5.5 9.5z"/>
+                      <path fill="#004482" d="M121.7 87.9V36.1c0-3.9-2.1-7.5-5.5-9.5l-46.7-27c-3.4-2-7.6-2-11 0v128.8c1.9 0 3.7-.5 5.5-1.5l46.7-27c3.4-2 5.5-5.6 5.5-9.5z"/>
+                      <path fill="#659AD2" d="M64 15.6L24.8 38.2v45.3L64 106.1l39.2-22.6V38.2L64 15.6z"/>
+                      <path fill="#ffffff" d="M64.6 38.6c-14.7 0-25.2 10.9-25.2 25.4 0 14.6 10.4 25.4 25.2 25.4 9.1 0 16.5-4.4 20.3-11.4l-9.8-5.3c-2.1 4.1-5.9 6.5-10.5 6.5-7.9 0-13.6-6.3-13.6-15.2 0-8.8 5.7-15.2 13.6-15.2 4.6 0 8.4 2.4 10.5 6.5l9.8-5.3c-3.8-7-11.2-11.4-20.3-11.4z"/>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <div class="skill-name">C programming</div>
+                    <div class="skill-type">Core Programming & Algorithms</div>
+                  </div>
+                </div>
+                <div class="skill-meter-container">
+                  <div class="skill-meter-labels">
+                    <span>Proficiency</span>
+                    <span>88%</span>
+                  </div>
+                  <div class="skill-meter-bar">
+                    <div class="skill-meter-fill" data-level="88"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skill: Python -->
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon-wrapper" title="Python">
+                    <svg viewBox="0 0 128 128" width="28" height="28">
+                      <defs>
+                        <linearGradient id="py-blue" x1="18.9%" y1="13.9%" x2="78.1%" y2="82.4%">
+                          <stop offset="0%" stop-color="#387eb8"/>
+                          <stop offset="100%" stop-color="#366994"/>
+                        </linearGradient>
+                        <linearGradient id="py-yellow" x1="19.7%" y1="18.3%" x2="79.9%" y2="82.8%">
+                          <stop offset="0%" stop-color="#ffe873"/>
+                          <stop offset="100%" stop-color="#ffd43b"/>
+                        </linearGradient>
+                      </defs>
+                      <path fill="url(#py-blue)" d="M63.5 6.4c-14.2 0-23.3 6.2-23.3 18.2v13.6h23.8v3.4H30.4C18.2 41.6 8 50.7 8 64.9c0 14.1 9.6 22.8 22.4 22.8h7.4V76.8c0-11.9 10.1-22.4 22.3-22.4h23.4V30.9c0-12.8-10.7-24.5-23.5-24.5h3.5zm-12.7 7.4c2.6 0 4.8 2.2 4.8 4.8 0 2.6-2.2 4.8-4.8 4.8s-4.8-2.2-4.8-4.8c0-2.6 2.2-4.8 4.8-4.8z"/>
+                      <path fill="url(#py-yellow)" d="M64.5 121.6c14.2 0 23.3-6.2 23.3-18.2V89.8H64v-3.4h33.6c12.2 0 22.4-9.1 22.4-23.3 0-14.1-9.6-22.8-22.4-22.8h-7.4v10.9c0 11.9-10.1 22.4-22.3 22.4H44.9v23.5c0 12.8 10.7 24.5 23.5 24.5h-3.9zm12.7-7.4c-2.6 0-4.8-2.2-4.8-4.8 0-2.6 2.2-4.8 4.8-4.8s4.8 2.2 4.8 4.8c0 2.6-2.2 4.8-4.8 4.8z"/>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <div class="skill-name">Python</div>
+                    <div class="skill-type">Data, Scripting & AI Development</div>
+                  </div>
+                </div>
+                <div class="skill-meter-container">
+                  <div class="skill-meter-labels">
+                    <span>Proficiency</span>
+                    <span>92%</span>
+                  </div>
+                  <div class="skill-meter-bar">
+                    <div class="skill-meter-fill" data-level="92"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Skill: Java -->
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon-wrapper" title="Java">
+                    <svg viewBox="0 0 128 128" width="28" height="28">
+                      <path fill="#5382a1" d="M48.6 96.9c-10.1 2.3-21.8 1.1-30.8-.8 0 0 8.1 4.5 22.6 4.6 15.5.1 27.2-4.4 27.2-4.4s-8.9-1.7-19-.6z"/>
+                      <path fill="#5382a1" d="M43.9 83.7c-12.7 2.8-27.4 1.3-38.7-1 0 0 10.2 5.5 28.5 5.6 19.5.1 34.3-5.4 34.3-5.4s-11.4-2-24.1.8z"/>
+                      <path fill="#ea2d2e" d="M72.2 68.7c4.7 5.3-4.5 9.9-4.5 9.9s11.8-6.1 6.3-12.3c-5.7-6.5-11.4-9.8-23.2-13.8-9.4-3.2-13.5-6.8-13.5-6.8s4.9 2.5 13.9 4.3c14.2 2.8 22.4 8.7 21 18.7z"/>
+                      <path fill="#5382a1" d="M85.4 105.7c-21.7 4.8-49.8 4.2-70.1-.4 0 0 13.2 5.6 37 5.7 26.5.1 52.1-4.7 52.1-4.7s-8.2-2.8-19-.6z"/>
+                      <path fill="#ea2d2e" d="M37.1 23.3c-4.8 5.6 4.9 14.8 13.4 18.2 4.2 1.7 6.4 1.3 6.4 1.3s-3.7-2.7-8.1-4.3c-6.8-2.6-10.8-7.5-6.8-11.4 6.7-6.6 22.5 2 22.5 2s-3.1-4.8-12.4-7.1c-8.9-2.2-11.1-.3-15 1.3z"/>
+                      <path fill="#5382a1" d="M102.7 114.7c-28.5 6.3-65.7 5.5-92.4-.5 0 0 17.4 7.3 48.8 7.5 35 .2 68.7-6.2 68.7-6.2s-10.9-3.7-25.1-.8z"/>
+                      <path fill="#5382a1" d="M87.5 90.7c15.2-16.1 9.9-28.7 3.5-38.3-2.6-3.8-6.3-7.5-6.3-7.5s1.9 2.9 4 5.9c6.6 9.6 7.4 17.5-4.4 28.5-9.4 8.8-23.2 11.2-23.2 11.2s11.2-3.7 26.4.2z"/>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <div class="skill-name">Java</div>
+                    <div class="skill-type">Object-Oriented Programming</div>
+                  </div>
+                </div>
+                <div class="skill-meter-container">
+                  <div class="skill-meter-labels">
+                    <span>Proficiency</span>
+                    <span>85%</span>
+                  </div>
+                  <div class="skill-meter-bar">
+                    <div class="skill-meter-fill" data-level="85"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Category 2: AI Tools -->
+          <div class="skills-category reveal-on-scroll">
+            <h3 class="skills-category-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                <path d="M2 12h20"></path>
+              </svg>
+              <span>AI Tools</span>
+            </h3>
+
+            <div class="skills-grid">
+              
+              <!-- Tool: ChatGPT -->
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon-wrapper" title="ChatGPT">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#10a37f">
+                      <path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <div class="skill-name">ChatGPT</div>
+                    <div class="skill-type">Prompt Engineering & Idea Exploration</div>
+                  </div>
+                </div>
+                <div class="skill-meter-container">
+                  <div class="skill-meter-labels">
+                    <span>Proficiency</span>
+                    <span>94%</span>
+                  </div>
+                  <div class="skill-meter-bar">
+                    <div class="skill-meter-fill" data-level="94"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tool: Claude -->
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon-wrapper" title="Claude">
+                    <svg viewBox="0 0 24 24" width="28" height="28" fill="#d97757">
+                      <path d="m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"/>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <div class="skill-name">Claude</div>
+                    <div class="skill-type">Problem Solving & Code Analysis</div>
+                  </div>
+                </div>
+                <div class="skill-meter-container">
+                  <div class="skill-meter-labels">
+                    <span>Proficiency</span>
+                    <span>95%</span>
+                  </div>
+                  <div class="skill-meter-bar">
+                    <div class="skill-meter-fill" data-level="95"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tool: Antigravity -->
+              <div class="skill-card">
+                <div class="skill-header">
+                  <div class="skill-icon-wrapper" title="Antigravity">
+                    <svg viewBox="0 0 24 24" width="28" height="28">
+                      <defs>
+                        <linearGradient id="agy-brand-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" stop-color="#4285F4"/>
+                          <stop offset="35%" stop-color="#00E5FF"/>
+                          <stop offset="70%" stop-color="#34A853"/>
+                          <stop offset="100%" stop-color="#FBBC05"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M21.751 22.607c1.34 1.005 3.35.335 1.508-1.508C17.73 15.74 18.904 1 12.037 1 5.17 1 6.342 15.74.815 21.1c-2.01 2.009.167 2.511 1.507 1.506 5.192-3.517 4.857-9.714 9.715-9.714 4.857 0 4.522 6.197 9.714 9.715z" fill="url(#agy-brand-grad)"/>
+                    </svg>
+                  </div>
+                  <div class="skill-info">
+                    <div class="skill-name">Antigravity</div>
+                    <div class="skill-type">Agentic Coding & Productivity</div>
+                  </div>
+                </div>
+                <div class="skill-meter-container">
+                  <div class="skill-meter-labels">
+                    <span>Proficiency</span>
+                    <span>96%</span>
+                  </div>
+                  <div class="skill-meter-bar">
+                    <div class="skill-meter-fill" data-level="96"></div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROJECTS SECTION (ONLY USER'S EXACT MESSAGE - CLEAN AND SIMPLE)
+         ========================================================================== -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">Things I'm working on and creating</p>
+        </div>
+
+        <!-- Clean single message card as requested -->
+        <div class="projects-single-card reveal-on-scroll">
+          <img src="assets/arc-reactor.svg" alt="Arc Reactor" class="projects-reactor-icon">
+          
+          <h3 class="projects-card-title">Projects are currently under development.</h3>
+          
+          <p class="projects-card-desc">
+            Add each project here when it’s ready, with a title, short description, technologies or tools used, and a link if available.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         EDUCATION SECTION (HEADLINE IN MIDDLE, SIMPLE WORDS)
+         ========================================================================== -->
+    <section id="education" class="education-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Education</h2>
+          <p class="section-subtitle">My academic path and qualifications</p>
+        </div>
+
+        <div class="education-timeline">
+          
+          <!-- Education 1: B.E. Computer Science -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-reactor-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3 class="timeline-degree">Bachelor of Computer Science and Engineering</h3>
+                <span class="timeline-date-badge">September 2025 – Present</span>
+              </div>
+              <div class="timeline-institution">Jain Institute of Technology, Davangere</div>
+              <div class="timeline-status-pill">
+                <span class="pulse-dot"></span>
+                <span>Currently in second year</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education 2: PUC -->
+          <div class="timeline-item reveal-on-scroll">
+            <div class="timeline-reactor-node"></div>
+            <div class="timeline-card">
+              <div class="timeline-card-header">
+                <h3 class="timeline-degree">Pre-University College (PUC)</h3>
+                <span class="timeline-date-badge">May 2023 – March 2025</span>
+              </div>
+              <div class="timeline-institution">Chanakya PU College, Davangere</div>
+              <div class="timeline-status-pill" style="color: var(--arc-cyan); background: rgba(0, 229, 255, 0.08); border-color: var(--border-cyan);">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Completed</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SPOTIFY SECTION (HEADLINE IN MIDDLE, SIMPLE WORDS, RITHVIK'S NAME)
+         ========================================================================== -->
+    <section id="spotify" class="spotify-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Spotify</h2>
+          <p class="section-subtitle">What I listen to while coding and studying</p>
+        </div>
+
+        <div class="spotify-section-wrapper">
+          
+          <!-- Info Column with Visualizer -->
+          <div class="spotify-info-card reveal-on-scroll">
+            <h3 style="font-size: 1.75rem;">Rithvik's Playlist</h3>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.7;">
+              Good music helps me stay focused and inspired during long coding sessions. Click below to listen to my favorite tracks on Spotify.
+            </p>
+
+            <!-- Soundwave Audio Graphic -->
+            <div class="soundwave-visualizer" aria-hidden="true">
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+              <div class="soundwave-bar"></div>
+            </div>
+
+            <!-- Direct Spotify Action Button (Strictly App Symbol & Name ONLY) -->
+            <a 
+              href="https://open.spotify.com/playlist/0qBYVVto7VyP5pDkf8NsCh?si=fGnMej9nTj-dggEmKynRjQ&utm_source=copy-link" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="spotify-btn-open"
+            >
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+              </svg>
+              <span>Spotify</span>
+            </a>
+          </div>
+
+          <!-- Official Embedded Responsive Spotify Player -->
+          <div class="spotify-embed-card reveal-on-scroll">
+            <iframe 
+              src="https://open.spotify.com/embed/playlist/0qBYVVto7VyP5pDkf8NsCh?utm_source=generator&theme=0" 
+              width="100%" 
+              height="352" 
+              frameBorder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy"
+              title="Rithvik's Spotify Playlist"
+            ></iframe>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         RESUME SECTION
+         ========================================================================== -->
+    <section id="resume" class="resume-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Resume</h2>
+        </div>
+
+        <div class="resume-card reveal-on-scroll" style="max-width: 650px;">
+          <p style="font-size: 1.2rem; font-weight: 500; color: var(--text-primary); margin: 0;">
+            My resume will be available here soon.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CONTACT & SOCIAL CONNECT (ONLY APP SYMBOL & APP NAME VISIBLE)
+         ========================================================================== -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        
+        <div class="section-header reveal-on-scroll">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">Get in touch with me</p>
+        </div>
+
+        <div class="contact-container">
+          
+          <!-- Direct Details & Social Links Grid -->
+          <div class="contact-info-panel reveal-on-scroll">
+            
+            <h3 style="font-size: 1.4rem;">Direct Contact</h3>
+            
+            <div class="contact-direct-cards">
+              <!-- Email Card -->
+              <a href="mailto:rithvikpr25@gmail.com" class="contact-tile">
+                <div class="contact-tile-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-tile-details">
+                  <span class="contact-tile-name">Email</span>
+                  <span class="contact-tile-val">rithvikpr25@gmail.com</span>
+                </div>
+              </a>
+
+              <!-- Phone Card -->
+              <a href="tel:8660257499" class="contact-tile">
+                <div class="contact-tile-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contact-tile-details">
+                  <span class="contact-tile-name">Phone</span>
+                  <span class="contact-tile-val">8660257499</span>
+                </div>
+              </a>
+            </div>
+
+            <!-- Social Applications Grid: ONLY APP SYMBOL & APP NAME VISIBLE -->
+            <div class="social-channel-title">Connect on Apps</div>
+            <div class="social-grid">
+              
+              <!-- GitHub Link -->
+              <a 
+                href="https://github.com/Rithvik250607" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="social-app-btn"
+                title="Connect on GitHub"
+              >
+                <span class="social-app-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                  </svg>
+                </span>
+                <span>GitHub</span>
+              </a>
+
+              <!-- LinkedIn Link -->
+              <a 
+                href="https://www.linkedin.com/in/rithvik-pr-a2595a35a?utm_source=share_via&utm_content=profile&utm_medium=member_android" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="social-app-btn"
+                title="Connect on LinkedIn"
+              >
+                <span class="social-app-icon" style="color: #0a66c2;">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                  </svg>
+                </span>
+                <span>LinkedIn</span>
+              </a>
+
+              <!-- Twitter (X) Link -->
+              <a 
+                href="https://x.com/RithvikPr" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="social-app-btn"
+                title="Connect on Twitter (X)"
+              >
+                <span class="social-app-icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                </span>
+                <span>Twitter (X)</span>
+              </a>
+
+              <!-- Instagram Link -->
+              <a 
+                href="https://www.instagram.com/_.simply.rithvik._?mdxt=MWxvMWZzcmMyeDFmNw==" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="social-app-btn"
+                title="Connect on Instagram"
+              >
+                <span class="social-app-icon" style="color: #e4405f;">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </span>
+                <span>Instagram</span>
+              </a>
+
+              <!-- WhatsApp Link -->
+              <a 
+                href="https://wa.me/918660257499" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="social-app-btn"
+                title="Connect on WhatsApp"
+              >
+                <span class="social-app-icon" style="color: #25d366;">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M17.507 14.307l-.009.075c-.238-.12-1.406-.697-1.624-.777-.219-.079-.379-.119-.538.12-.16.239-.619.779-.758.938-.14.16-.279.18-.518.06-.239-.12-1.01-.372-1.924-1.187-.711-.635-1.192-1.42-1.332-1.66-.14-.239-.015-.368.105-.488.108-.108.24-.279.36-.419.12-.14.16-.239.24-.399.079-.16.039-.3-.02-.419s-.538-1.298-.738-1.777c-.195-.466-.393-.403-.538-.411l-.459-.008c-.16 0-.419.06-.638.3-.219.239-.838.819-.838 1.997 0 1.178.858 2.316.978 2.476.12.16 1.689 2.58 4.093 3.619.572.247 1.018.395 1.367.506.575.183 1.098.157 1.512.095.462-.069 1.406-.576 1.604-1.134.198-.558.198-1.037.139-1.134-.059-.098-.218-.158-.457-.278zm-5.467 7.693c-2.029 0-3.924-.54-5.568-1.482l-.399-.23-4.133 1.084 1.103-4.03-.259-.413c-1.03-1.642-1.574-3.551-1.574-5.518 0-5.75 4.678-10.428 10.43-10.428 2.786 0 5.405 1.085 7.375 3.055s3.055 4.589 3.055 7.373c-.001 5.751-4.679 10.429-10.43 10.429zm8.813-19.242c-2.353-2.354-5.485-3.651-8.813-3.651-6.862 0-12.446 5.584-12.446 12.447 0 2.193.573 4.333 1.66 6.223l-1.764 6.446 6.596-1.73c1.83 1.002 3.904 1.53 6.014 1.53h.005c6.861 0 12.445-5.584 12.445-12.447 0-3.327-1.296-6.459-3.647-8.818z"/>
+                  </svg>
+                </span>
+                <span>WhatsApp</span>
+              </a>
+
+            </div>
+
+          </div>
+
+          <!-- Clean Message Form -->
+          <div class="contact-form-panel reveal-on-scroll">
+            <h3 class="contact-form-title">Send a Message</h3>
+            <p class="contact-form-subtitle">Have a project or just want to say hi? Drop me a message.</p>
+
+            <form id="transmission-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Johnson" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Your Email</label>
+                <input type="email" id="form-email" class="form-input" placeholder="e.g. alex@example.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message</label>
+                <textarea id="form-message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-classy-primary" style="width: 100%; justify-content: center;">
+                <span>Send Message</span>
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER & BACK TO TOP
+       ========================================================================== -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <img src="assets/arc-reactor.svg" alt="Arc Reactor" class="footer-reactor-center">
+      
+      <div class="footer-copy">
+        © 2026 Rithvik P R
+      </div>
+
+      <div class="footer-subtitle">
+        Designed & Developed by Rithvik P R
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating "Back To Top" Button -->
+  <button id="back-to-top-btn" class="back-to-top-btn" title="Back To Top" aria-label="Back To Top">
+    <svg viewBox="0 0 24 24">
+      <line x1="12" y1="19" x2="12" y2="5"></line>
+      <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+  </button>
+
+  <!-- Core Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

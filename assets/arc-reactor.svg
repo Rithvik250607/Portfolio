@@ -1,0 +1,124 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <!-- Arc Reactor Core Glow -->
+    <radialGradient id="arcGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="25%" stop-color="#a5f3fc"/>
+      <stop offset="55%" stop-color="#00f0ff"/>
+      <stop offset="85%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </radialGradient>
+    <radialGradient id="ringGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="70%" stop-color="#000000" stop-opacity="0"/>
+      <stop offset="90%" stop-color="#00f0ff" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00f0ff" stop-opacity="0.8"/>
+    </radialGradient>
+    <linearGradient id="goldCoil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#eab308"/>
+      <stop offset="100%" stop-color="#854d0e"/>
+    </linearGradient>
+    <filter id="reactorPulse" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Outer Ring Base -->
+  <circle cx="200" cy="200" r="185" fill="#080d1a" stroke="#00f0ff" stroke-width="3" filter="url(#reactorPulse)"/>
+  <circle cx="200" cy="200" r="175" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="14 8"/>
+  <circle cx="200" cy="200" r="162" fill="#0b1329" stroke="#00f0ff" stroke-width="2"/>
+
+  <!-- 10 Magnetic Inductor Coils (Symmetric Circular Array) -->
+  <g id="coils">
+    <!-- Coil 1 (0 deg) -->
+    <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+    <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+    <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+
+    <!-- Coil 2 (36 deg) -->
+    <g transform="rotate(36 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 3 (72 deg) -->
+    <g transform="rotate(72 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 4 (108 deg) -->
+    <g transform="rotate(108 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 5 (144 deg) -->
+    <g transform="rotate(144 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 6 (180 deg) -->
+    <g transform="rotate(180 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 7 (216 deg) -->
+    <g transform="rotate(216 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 8 (252 deg) -->
+    <g transform="rotate(252 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 9 (288 deg) -->
+    <g transform="rotate(288 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+
+    <!-- Coil 10 (324 deg) -->
+    <g transform="rotate(324 200 200)">
+      <rect x="187" y="32" width="26" height="34" rx="4" fill="url(#goldCoil)" stroke="#00f0ff" stroke-width="1.5"/>
+      <line x1="187" y1="42" x2="213" y2="42" stroke="#1e293b" stroke-width="1.5"/>
+      <line x1="187" y1="52" x2="213" y2="52" stroke="#1e293b" stroke-width="1.5"/>
+    </g>
+  </g>
+
+  <!-- Mid Ring Track -->
+  <circle cx="200" cy="200" r="125" fill="#040814" stroke="#00f0ff" stroke-width="3"/>
+  <circle cx="200" cy="200" r="110" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="6 4"/>
+  <circle cx="200" cy="200" r="95" fill="#02040a" stroke="#00f0ff" stroke-width="2"/>
+
+  <!-- Inner Triangular Catalyst / Palladium Core Geometry -->
+  <polygon points="200,118 271,241 129,241" fill="none" stroke="#00f0ff" stroke-width="3" stroke-linejoin="round"/>
+  <polygon points="200,282 129,159 271,159" fill="none" stroke="rgba(245, 158, 11, 0.7)" stroke-width="2" stroke-linejoin="round"/>
+
+  <!-- Core Radiant Reactor -->
+  <circle cx="200" cy="200" r="55" fill="url(#arcGlow)" filter="url(#reactorPulse)"/>
+  <circle cx="200" cy="200" r="28" fill="#ffffff"/>
+  
+  <!-- Core Radial Rays -->
+  <line x1="200" y1="130" x2="200" y2="150" stroke="#00f0ff" stroke-width="2"/>
+  <line x1="200" y1="250" x2="200" y2="270" stroke="#00f0ff" stroke-width="2"/>
+  <line x1="130" y1="200" x2="150" y2="200" stroke="#00f0ff" stroke-width="2"/>
+  <line x1="250" y1="200" x2="270" y2="200" stroke="#00f0ff" stroke-width="2"/>
+</svg>
