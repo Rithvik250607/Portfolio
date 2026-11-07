@@ -747,6 +747,10 @@
             <p class="contact-form-subtitle">Have a project or just want to say hi? Drop me a message.</p>
 
             <form id="transmission-form">
+              <div class="form-group" aria-hidden="true" style="position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden;">
+                <label for="form-website">Leave this field empty</label>
+                <input type="text" id="form-website" name="website" tabindex="-1" autocomplete="off">
+              </div>
               <div class="form-group">
                 <label for="form-name" class="form-label">Your Name</label>
                 <input type="text" id="form-name" class="form-input" placeholder="e.g. Alex Johnson" required>
@@ -769,6 +773,7 @@
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
               </button>
+              <p id="contact-form-status" role="status" aria-live="polite" style="margin-top: 1rem;"></p>
             </form>
           </div>
 

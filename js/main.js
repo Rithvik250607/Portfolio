@@ -432,22 +432,43 @@ function initContactForm() {
   const form = document.getElementById('transmission-form');
   if (!form) return;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('form-name').value.trim();
     const email = document.getElementById('form-email').value.trim();
     const message = document.getElementById('form-message').value.trim();
+    const website = document.getElementById('form-website')?.value.trim();
+    const status = document.getElementById('contact-form-status');
+    const submitButton = form.querySelector('button[type="submit"]');
 
-    if (!name || !message) {
-      alert('Please fill out your name and message.');
+    if (!name || !email || !message) {
+      if (status) status.textContent = 'Please fill out all fields.';
+      return;
+    }
+
+    if (name.length > 120 || email.length > 254 || message.length > 5000) {
+      if (status) status.textContent = 'Please shorten your message and try again.';
       return;
     }
 
     playSubtleSound('click');
+    if (status) status.textContent = 'Sending your message…';
+    if (submitButton) submitButton.disabled = true;
 
-    const subject = encodeURIComponent(`Message from ${name} via Portfolio`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}\n\n-- Sent from Rithvik P R Portfolio`);
-    
-    window.location.href = `mailto:rithvikpr25@gmail.com?subject=${subject}&body=${body}`;
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message, website })
+      });
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok) throw new Error(result.error || 'Message could not be sent.');
+      form.reset();
+      if (status) status.textContent = 'Message sent. Thanks for reaching out!';
+    } catch (error) {
+      if (status) status.textContent = error.message || 'Message could not be sent. Please try again later.';
+    } finally {
+      if (submitButton) submitButton.disabled = false;
+    }
   });
 }

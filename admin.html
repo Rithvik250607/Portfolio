@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Portfolio message inbox">
+  <title>Admin Inbox | Rithvik P R</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .admin-page { min-height: 100vh; padding: 7rem 0 4rem; background: var(--bg-primary); color: var(--text-primary); }
+    .admin-wrap { width: min(920px, calc(100% - 2rem)); margin: 0 auto; }
+    .admin-heading { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 2rem; }
+    .admin-heading h1 { margin: 0; }
+    .admin-card { padding: clamp(1.25rem, 4vw, 2rem); background: var(--bg-card); border: 1px solid var(--card-border); border-radius: var(--card-radius); box-shadow: var(--hud-shadow); }
+    .admin-status { min-height: 1.5rem; color: var(--text-secondary); }
+    .admin-messages { display: grid; gap: 1rem; margin-top: 1.5rem; }
+    .admin-message { padding: 1.25rem; border: 1px solid var(--card-border); border-radius: 12px; background: var(--bg-secondary); overflow-wrap: anywhere; }
+    .admin-message h2 { margin: 0 0 .4rem; font-size: 1.1rem; }
+    .admin-message a { color: var(--arc-cyan); }
+    .admin-message time { display: block; margin: .5rem 0 1rem; color: var(--text-muted); font-size: .85rem; }
+    .admin-message p { margin: 0; white-space: pre-wrap; color: var(--text-secondary); }
+    .admin-hidden { display: none !important; }
+    .admin-actions { display: flex; gap: .75rem; align-items: center; }
+    @media (max-width: 560px) { .admin-heading { align-items: flex-start; flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <main class="admin-page">
+    <div class="admin-wrap">
+      <header class="admin-heading">
+        <div>
+          <p class="section-subtitle">PORTFOLIO CONTROL</p>
+          <h1 class="section-title">Message Inbox</h1>
+        </div>
+        <div class="admin-actions">
+          <a href="/" class="btn-classy-outline">Back to portfolio</a>
+          <button id="logout-button" type="button" class="btn-classy-outline admin-hidden">Sign out</button>
+        </div>
+      </header>
+
+      <section id="login-panel" class="admin-card">
+        <h2>Admin sign in</h2>
+        <p class="contact-form-subtitle">Sign in with the portfolio admin account.</p>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="admin-email" class="form-label">Email</label>
+            <input id="admin-email" class="form-input" type="email" value="rithvikpr25@gmail.com" readonly autocomplete="username">
+          </div>
+          <div class="form-group">
+            <label for="admin-password" class="form-label">Password</label>
+            <input id="admin-password" class="form-input" type="password" required autocomplete="current-password">
+          </div>
+          <button id="login-button" class="btn-classy-primary" type="submit">Open inbox</button>
+        </form>
+        <p id="login-status" class="admin-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="inbox-panel" class="admin-card admin-hidden" aria-live="polite">
+        <div class="admin-heading">
+          <div>
+            <h2>Messages</h2>
+            <p id="inbox-status" class="admin-status"></p>
+          </div>
+          <button id="refresh-button" type="button" class="btn-classy-outline">Refresh</button>
+        </div>
+        <div id="messages-list" class="admin-messages"></div>
+      </section>
+    </div>
+  </main>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
